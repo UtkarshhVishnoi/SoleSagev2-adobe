@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoleSage</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Adobe Launch Embed Code will go here -->
+    <!-- Example: <script src="https://assets.adobedtm.com/YOUR_LAUNCH_PROPERTY_ID/launch-YOUR_ENVIRONMENT.min.js" async></script> -->
+</head>
+<body style="overflow-x: hidden; position: relative;">
+    <header class="w-full sticky top-0 z-50 bg-[#f7f3e7]">
+        <nav class="flex justify-between w-full px-4 md:px-8 py-2 items-center">
+            <div class="flex items-center gap-2">
+                <a href="index.html"><div class="icon h-16 w-16 rounded-md"></div></a>
+                <div class="font-semibold" style="color: #231709;">SoleSage</div>
+            </div>
+            <div class="hidden gap-6 md:flex items-center">
+                <a href="index.html" class="text-[#231709]">Home</a>
+                <a href="./index.html" class="text-[#231709]">Shop</a>
+                <a href="./contact.html" class="text-[#231709]">Contact</a>
+                <a href="./about.html" class="text-[#231709]">About</a>
+                <img src="./icons8-cart-50.png" class="h-[25px] w-[25px] cart-icn" id="cart_icon_desktop"/>
+                <span class="bg-[#603F26] text-white px-1 rounded-full" id="cart-num">0</span>
+            </div>
+            <div class="md:hidden" id="menu-btn">
+                <img src="./icons8-menu.gif"/>
+            </div>
+        </nav>
+        <div class=" hidden flex flex-col px-6 py-4 gap-6 md:hidden border-t-2 border-b-2 border-indigo-400" id="drop_nav">
+                <a href="index.html">Home</a>
+                <a href="#">Shop</a>
+                <a href="./contact.html" class="text-[#231709]">Contact</a>
+                <a href="./about.html">About</a>
+                <img src="./icons8-cart-50.png" class="h-[25px] w-[25px] cart-icn" id="cart_icon_sm"/>
+                <span class="bg-red-600 text-white px-1 rounded-full" id="cart-num-sm">0</span>
+            </div>
+    </header>
+
+    <main class=" px-2 md:px-6 flex flex-col py-4 gap-4 md:gap-0 md:py-0 md:flex-row items-center bg-[#8e7e6d]">
+        <div class="banner md:h-[415px] md:w-[580px]"></div>
+        <div class="desc flex flex-col gap-8 justify-start">
+            <p style="color: #231709;">Our Exclusive Online Shopping Website</p>
+            <h1 class="font-semibold text-6xl md:text-7xl" style="color: #231709;">SoleSage</h1>
+            <p class="font-semibold" style="color: #231709;">Designed for those who walk with intention — SoleSage blends comfort, clarity, and timeless style in every step.</p>
+           <button style="background-color: #603F26; color: #f7f3e7;" class="p-3 md:p-5 rounded-full text-lg w-48 shop_now_click" onclick="scrollToProducts()">Shop now</button>
+        </div>
+        
+    </main>
+
+    <div class="carousel-container overflow-hidden relative w-full" style="height: 100px; margin-bottom: 20px;">
+    <div class="carousel-track flex transition-transform duration-700 ease-in-out" style="width: 600%;">
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/noah-smith-LkuH3Txi_gs-unsplash.jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#231709] bg-opacity-50 text-white text-md font-bold p-2">Barker Brown Leather Loafers - Step in Style</div>
+        </div>
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/ayrus-hill-RpXjt8vkmoE-unsplash.2jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#603F26] bg-opacity-50 text-white text-md font-bold p-2">Alberto Torresi Brown Shoes - Classic Comfort</div>
+        </div>
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/collab-media-dYgEvR2gdgk-unsplash.jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#231709] bg-opacity-50 text-white text-md font-bold p-2">Neemans WingTip Brogues - Timeless Elegance</div>
+        </div>
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/davinder-singh-2nST4hbvTkc-unsplash.jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#603F26] bg-opacity-50 text-white text-md font-bold p-2">Mochi Black Lace Up Shoes - Modern Sophistication</div>
+        </div>
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/guy-basabose-LPok0JM-S8M-unsplash.jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#231709] bg-opacity-50 text-white text-md font-bold p-2">Minelli Heels - Elevate Your Look</div>
+        </div>
+        <div class="carousel-item w-1/6 flex-shrink-0" style="background-image: url('./shoes/jia-ye-erHlzWCN6zQ-unsplash.jpg'); background-size: cover; background-position: center; height: 100px;">
+            <div class="flex items-center justify-center h-full bg-[#603F26] bg-opacity-50 text-white text-md font-bold p-2">Monk Strap Brown Shoes - Refined Style</div>
+        </div>
+    </div>
+    <button class="carousel-button prev absolute top-1/2 left-4 -translate-y-1/2 bg-[#231709] text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100">‹</button>
+    <button class="carousel-button next absolute top-1/2 right-4 -translate-y-1/2 bg-[#231709] text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100">›</button>
+    </div>
+    </div>
+    <div class="products flex gap-2 flex-wrap justify-center p-4" id="product-container">
+        <div class="pcard rounded-md shadow-lg shadow-[#8e7e6d]" data-product-id="product_1" data-brand-name="Barker">
+            <img src="./shoes/noah-smith-LkuH3Txi_gs-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Barker Brown Leather Loafers</p>
+            <div class="flex" >
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">4999</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">8999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_2" data-product-id="product_2" data-brand-name="Alberto Torresi">
+            <img src="./shoes/ayrus-hill-RpXjt8vkmoE-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Alberto Torresi Brown Shoes</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">5799</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">7999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_3" data-product-id="product_3" data-brand-name="Neemans">
+            <img src="./shoes/collab-media-dYgEvR2gdgk-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Neemans WingTip Brogues</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">4899</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">6599</s>
+            </div>
+            <button  class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_4" data-product-id="product_4" data-brand-name="Mochi">
+            <img src="./shoes/davinder-singh-2nST4hbvTkc-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Mochi Black Lace Up Shoes </p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">2799</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">4999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_5" data-product-id="product_5" data-brand-name="Minelli">
+            <img src="./shoes/guy-basabose-LPok0JM-S8M-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Minelli-heels</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">6799</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">8499</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_6" data-product-id="product_6" data-brand-name="Generic Brand">
+            <img src="./shoes/jia-ye-erHlzWCN6zQ-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Monk Strap Brown Shoes </p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">5199</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">7999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_7" data-product-id="product_7" data-brand-name="Hush Puppies">
+            <img src="./shoes/james-lewis-GeXsUpTSYFg-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Hush Puppies Chukka Boots</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">4199</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">4799</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_8" data-product-id="product_8" data-brand-name="Harrykson">
+            <img src="./shoes/noah-smith-R4xOiCIeOUs-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Harrykson London Boots</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">8999</span>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_9" data-product-id="product_9" data-brand-name="Barker">
+            <img src="./shoes/1z2hBTKHdWI-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Barker Suede Shoes</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">5899</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">6999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_10" data-product-id="product_10" data-brand-name="Valentino">
+            <img src="./shoes/pexels-scottwebb-137603.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Valentino Yellow Heels</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">7999</span>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_11" data-product-id="product_11" data-brand-name="Ralph Lauren">
+            <img src="./shoes/prateek-chawla-87luO7iL1mM-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Ralph Lauren tooled Shoes</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">8999</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">9999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="pcard rounded-md shadow-lg [--tw-shadow-color:#8e7e6d] shadow" id="p_12" data-product-id="product_12" data-brand-name="Clarks">
+            <img src="./shoes/mostafa-mahmoudi-3OZr-hLbsq0-unsplash.jpg" class="product-image"/>
+            <div class="p-4 flex flex-col gap-2">
+            <p class="font-semibold text-lg product-title" style="color: #231709;">Clarks Chelsea Boots</p>
+            <div class="flex">
+            <span class="font-mono text-600 inr">₹</span><span class="font-mono text-yellow-600 product-price">7899</span><span class="font-mono text-600 inr text-yellow-600">&nbsp;₹</span><s class="font-mono text-yellow-600">8999</s>
+            </div>
+            <button class="rounded-full px-2 py-1 text-sm add-t-cart">Add to cart</button>
+            </div>
+        </div>
+
+    </div>
+   <section class="py-8 bg-[#f7f3e7]">
+    <div class="px-2 md:px-6 text-center mx-auto max-w-screen-xl">
+        <h2 class="text-4xl font-bold mb-6" style="color: #231709;">Our Craftsmanship Story</h2>
+        <div class="relative overflow-hidden w-full" style="padding-top: 35%;"> <video
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                src="./videos/9936744-hd_1920_1080_25fps.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                >
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="mt-6 text-lg" style="color: #603F26;">See how every SoleSage shoe is meticulously crafted for your journey.</p>
+    </div>
+    </section>
+
+    <footer>
+        <div class="bg-squirrel text-bison p-4 flex flex-col gap-6">
+            <div class="flex flex-col md:flex-row gap-2 justify-around">
+                <div>
+                <h4 style="margin-top:0; color: #231709;">Connect With Us</h4>
+                <div class="flex gap-2">
+                    <a href="https://www.facebook.com/" class="text-blue-300" target="_blank">
+                        <img src="./logos/facebook_logo.png" alt="Facebook" style="width:30px;height:30px;">
+                    </a>
+                    <a href="https://x.com/" class="text-blue-300" target="_blank">
+                        <img src="./logos/x_logo.png" alt="Twitter" style="width:30px;height:30px;">
+                    </a>
+                    <a href="https://www.instagram.com" class="text-pink-300" target="_blank">
+                        <img src="./logos/instagram_logo.png" alt="Instagram" style="width:30px;height:30px;">
+                    </a>
+                    <a href="https://www.pinterest.com" class="text-red-400" target="_blank">
+                        <img src="./logos/pinterest_logo.png" alt="Pinterest" style="width:30px;height:30px;">
+                    </a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                <h4 style="color: #231709;">Sign Up For Our Newsletter</h4>
+                <p class="text-slate-200 text-sm" style="color: #f7f3e7;">Get exclusive deals and the latest shoe trends!</p>
+                <form>
+                    <input type="email" placeholder="Your Email Address" style="padding:10px; border:1px solid #f7f3e7; border-radius:5px 0 0 5px; flex-grow:1;">
+                    <button type="submit" style="background-color:#007bff; color:#f7f3e7; border:none; padding:10px 15px; border-radius:0 5px 5px 0; cursor:pointer;">Subscribe</button>
+                </form>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-2 justify-around">
+
+                <div>
+                <u><h4 style="color: #231709;">Shop</h4></u>
+                <ul>
+                    <li><a href="/new-arrivals" class="text-slate-200 text-sm" style="color: #f7f3e7;">New Arrivals</a></li>
+                    <li><a href="/mens-shoes" class="text-slate-200 text-sm" style="color: #f7f3e7;">Men's Shoes</a></li>
+                    <li><a href="/womens-shoes" class="text-slate-200 text-sm" style="color: #f7f3e7;">Women's Shoes</a></li>
+                    <li><a href="/sale" class="text-slate-200 text-sm" style="color: #f7f3e7;">Sale</a></li>
+                </ul>
+                </div>
+
+                <div>
+                <u><h4 style="color: #231709;">Customer Service</h4></u>
+                <ul>
+                    <li><a href="./contact.html" class="text-slate-200 text-sm" style="color: #f7f3e7;">Contact Us</a></li>
+                    <li><a href="./shipping-policy.html" class="text-slate-200 text-sm" style="color: #f7f3e7;">Shipping Policy</a></li>
+                    <li><a href="./return-policy.html" class="text-slate-200 text-sm" style="color: #f7f3e7;">Return Policy</a></li>
+                    <li><a href="./faq.html" class="text-slate-200 text-sm" style="color: #f7f3e7;">FAQ</a></li>
+                </ul>
+                </div>
+
+                <div>
+                <u><h4 style="color: #231709;">About Us</h4></u>
+                <ul>
+                    <li><a href="./about.html" class="text-slate-200 text-sm" style="color: #f7f3e7;">Our Story</a></li>
+                    <li><a href="/careers" class="text-slate-200 text-sm" style="color: #f7f3e7;">Careers</a></li>
+                    <li><a href="/blog" class="text-slate-200 text-sm" style="color: #f7f3e7;">Blog</a></li>
+                </ul>
+                </div>
+            </div>
+            <div style="text-align:center;">
+                <p class="text-slate-200 text-sm" style="color: #f7f3e7;">&copy; 2025 SoleSage. All Rights Reserved.</p>
+                <p><a href="/privacy-policy" style="color:#555; text-decoration:none; margin:0 10px;">Privacy Policy</a> | <a href="/terms-of-service" style="color:#555; text-decoration:none; margin:0 10px;">Terms of Service</a></p>
+            </div>
+            </div>
+    </footer>
+    <div id="crt" class=" w-full md:w-[35%] h-screen hidden" style="padding-top: 40;" >
+        <div class="flex justify-between p-3 items-center">
+           <h1 class="text-center font-semibold">Cart</h1>
+           <p class="text-xl" id="crt-btn">x</p>
+       </div>
+       <div class="flex justify-between p-3 items-center">
+           <h1 class="text-center font-semibold">Total Amount :</h1>
+           <div>
+            <span>₹</span>
+           <span class="text-xl" id="cartp">0</span>
+           </div>
+       </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./script.js"></script>
+    <script>
+        function scrollToProducts() {
+            const productContainer = document.getElementById('product-container');
+            if (productContainer) {
+                productContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
