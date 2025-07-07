@@ -7,7 +7,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Digital Data Layer -->
+    <script>
+        window.digitalData = window.digitalData || {};
+
+        window.digitalData.page = {
+            pageInfo: {
+                pageName: 'SoleSage: Shipping Policy',
+                pageURL: window.location.href,
+                pageType: 'Policy Page',
+                pageCategory: 'Customer Service'
+            },
+            attributes: {
+                templateType: 'content-page'
+            }
+        };
+
+        window.digitalData.user = {
+            profile: [{
+                profileInfo: {
+                    // userId: 'user123',
+                    userSegment: 'Guest'
+                }
+            }]
+        };
+
+        window.digitalData.site = {
+            version: '1.0',
+            environment: 'production'
+        };
+
+        console.log('Digital Data Layer Initialized:', window.digitalData);
+    </script>
+    
     <!-- Adobe Launch Embed Code will go here -->
+    <script src="https://assets.adobedtm.com/236ca7d75265/fe68c08d4694/launch-add1cc109d09-development.min.js" async></script>
     <!-- Example: <script src="https://assets.adobedtm.com/YOUR_LAUNCH_PROPERTY_ID/launch-YOUR_ENVIRONMENT.min.js" async></script> -->
 </head>
 <body style="overflow-x: hidden; position: relative;">
