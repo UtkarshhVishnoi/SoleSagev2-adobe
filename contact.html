@@ -7,7 +7,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Digital Data Layer -->
+    <script>
+        window.digitalData = window.digitalData || {};
+
+        window.digitalData.page = {
+            pageInfo: {
+                pageName: 'SoleSage: Contact Us',
+                pageURL: window.location.href,
+                pageType: 'Contact Page',
+                pageCategory: 'Customer Service'
+            },
+            attributes: {
+                templateType: 'form-page'
+            }
+        };
+
+        window.digitalData.user = {
+            profile: [{
+                profileInfo: {
+                    // userId: 'user123',
+                    userSegment: 'Guest'
+                }
+            }]
+        };
+
+        window.digitalData.site = {
+            version: '1.0',
+            environment: 'production'
+        };
+
+        console.log('Digital Data Layer Initialized:', window.digitalData);
+    </script>
+
     <!-- Adobe Launch Embed Code will go here -->
+    <script src="https://assets.adobedtm.com/236ca7d75265/fe68c08d4694/launch-add1cc109d09-development.min.js" async></script>
     <!-- Example: <script src="https://assets.adobedtm.com/YOUR_LAUNCH_PROPERTY_ID/launch-YOUR_ENVIRONMENT.min.js" async></script> -->
 </head>
 <body style="overflow-x: hidden; position: relative;">
@@ -43,7 +78,7 @@
         <h1 class="text-4xl font-bold mb-8" style="color: #231709;">Contact Us</h1>
         <p class="text-lg text-center mb-10 max-w-2xl" style="color: #231709;">We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.</p>
 
-        <form class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg" style="box-shadow: 0 4px 6px -1px rgba(142, 126, 109, 0.5), 0 2px 4px -1px rgba(142, 126, 109, 0.3);">
+        <form class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg" style="box-shadow: 0 4px 6px -1px rgba(142, 126, 109, 0.5), 0 2px 4px -1px rgba(142, 126, 109, 0.3);" id="contact-form">
             <div class="mb-5">
                 <label for="name" class="block text-sm font-medium text-gray-700" style="color: #231709;">Your Name</label>
                 <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#603F26] focus:border-[#603F26] sm:text-sm" required>
