@@ -66,6 +66,10 @@ productsContainer.addEventListener("click", function (event) {
                 `Adding to cart: Name: ${productName}, Discounted Price: ${productPrice}, Actual Price: ${actualPrice}, Product ID: ${productId}, Brand: ${brandName}, Cart Total: ${cartprice}, Items: ${cartnum}, Image: ${image}`
             );
             window.digitalData.product = productName
+             window.digitalData.productid = productId
+            window.digitalData.productname = productName
+            window.digitalData.brand = brandName
+            
             document.getElementById("cart-num").innerText = cartnum;
             document.getElementById("cart-num-sm").innerText = cartnum;
 
